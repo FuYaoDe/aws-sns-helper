@@ -4,7 +4,6 @@ const debug = require('debug')('awsPushSNS');
 
 class SNSHelper {
     constructor(config) {
-        console.log("config", config)
         this.messageAttributes = {};
         this.AWS_SNS_ARN_APNS = config.AWS_SNS_ARN_APNS;
         this.AWS_SNS_ARN_APNS_SANDBOX = config.AWS_SNS_ARN_APNS_SANDBOX;
@@ -65,7 +64,6 @@ class SNSHelper {
     }
 
     async pushNotification(props) {
-        console.log("=== module pushNotification ===")
         let { platform, devicePlatform, deviceToken, message, notification, notifyCount, messageAttributes, title } = props;
         let result;
         let endpoint;
@@ -77,7 +75,6 @@ class SNSHelper {
         };
 
         try {
-            console.log("deviceToken", deviceToken);
             let platformArn = this.getPlatformArn(platform);
 
             if (platform.startsWith("APNS")) {
