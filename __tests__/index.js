@@ -33,7 +33,7 @@ test('ios apns sending message', async () => {
       deviceToken: config.test.IOS_DEVICE_TOKEN_APNS,
       message: "test message",
       notification: "test notification",
-      notifyCount: 0,
+      notifyCount: 1,
       messageAttributes: {
         //http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes
         'hello': {
@@ -64,7 +64,7 @@ test('ios apns sending message', async () => {
   })
   
 
-test.only('fcm sending message', async () => {
+test('fcm sending message', async () => {
 
   let {
     AWS_SNS_ARN_APNS, 

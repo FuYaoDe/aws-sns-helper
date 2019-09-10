@@ -84,6 +84,7 @@ class SNSHelper {
                             "body": message,
                             ...title ? { title } : {},
                         },
+                        badge: notifyCount,
                         sound: "default"
                     },
                     ...messageAttributes
