@@ -37,11 +37,13 @@ class SNSHelper {
             return {
                 APNS: {
                     default: 'message',
-                    APNS: payload
+                    APNS: payload,
+                    APNS_SANDBOX: payload,
                 },
                 APNS_SANDBOX: {
                     default: 'message',
-                    APNS_SANDBOX: payload
+                    APNS: payload,
+                    APNS_SANDBOX: payload,
                 },
                 GCM: {
                     default: 'message',
@@ -76,7 +78,6 @@ class SNSHelper {
 
         try {
             let platformArn = this.getPlatformArn(platform);
-
             if (platform.startsWith("APNS")) {
                 data = {
                     aps: {

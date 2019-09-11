@@ -29,9 +29,10 @@ test('ios apns sending message', async () => {
     
     let snsHelper = new SNSHelper(constructorParams);
     let props = {
-      platform: "APNS_SANDBOX",
+      // platform: "APNS_SANDBOX",
+      platform: "APNS",
       deviceToken: config.test.IOS_DEVICE_TOKEN_APNS,
-      message: "test message",
+      message: "test message 測試訊息",
       notification: "test notification",
       notifyCount: 1,
       messageAttributes: {
